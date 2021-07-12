@@ -3,19 +3,19 @@ import "./CreateAccount.css";
 import db from "./firebase";
 import alertify from "alertifyjs";
 const CreateAccount = (props) => {
-  const create = (e) => {
+  const create = async (e) => {
     e.preventDefault();
-    if (email && password) {
-      db.collection("users").add({
+    if (email.length && password.length) {
+      await db.collection("users").add({
         email,
         password,
       });
-      alertify.success(`Kullanıcı Oluşturuldu.`, 1);
+      alertify.success(`User creared.`, 1);
       setEmail("");
       setPassword("");
       props.history.push("/login");
     } else {
-      alertify.error(`Lütfen Alanların Hepsini Doldurunuz.`, 1);
+      alertify.error(`Please fill in all fields.`, 1);
     }
   };
   const [email, setEmail] = useState("");

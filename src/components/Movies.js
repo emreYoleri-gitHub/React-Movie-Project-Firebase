@@ -17,12 +17,12 @@ const Movies = ({ history }) => {
   };
   if (movies.length) {
     return (
-      <div className="d-flex flex-wrap justify-content-between">
+      <div className="d-flex flex-wrap justify-content-center">
         {movies.map((movie, index) => {
           return (
             <div
               key={index}
-              className="mb-1 me-1 p-4 mt-3"
+              className="mb-1 me-3 p-4 mt-3"
               style={{
                 height: "25rem",
                 background: "#F0F4F3",
