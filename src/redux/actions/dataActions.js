@@ -13,9 +13,9 @@ export const getUsers = () => (dispatch) => {
   });
 };
 
-export const selectUser = (user)=> dispatch => {
+export const selectUser = (user) => (dispatch) => {
   dispatch({
     type: "SELECT_USER",
     payload: user,
   });
-}
+};

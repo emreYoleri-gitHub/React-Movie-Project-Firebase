@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Movies from "./Movies";
 import { bindActionCreators } from "redux";
 import { movieActions } from "../redux/actions";
 const Input = () => {
   const [inpValue, setInpValue] = useState("");
   const [dataCheck, setDataCheck] = useState(false);
-  const movies = useSelector((state) => state.movieReducer.movies);
   const dispatch = useDispatch();
   const { getMovies } = bindActionCreators(movieActions, dispatch);
   const submitHandler = async (e) => {
