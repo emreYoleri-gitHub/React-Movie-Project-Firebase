@@ -11,21 +11,21 @@ const CreateAccount = (props) => {
         password,
       });
       alertify.success(`Kullanıcı Oluşturuldu.`, 1);
-      setEmail(null);
-      setPassword(null);
+      setEmail("");
+      setPassword("");
       props.history.push("/login");
     } else {
       alertify.error(`Lütfen Alanların Hepsini Doldurunuz.`, 1);
     }
   };
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <>
       <div className="registration-form">
         <form action="" onSubmit={(e) => create(e)}>
           <div className="form-icon">
-            <i class="fas fa-user-plus"></i>
+            <i className="fas fa-user-plus"></i>
           </div>
           <div className="form-group">
             <input
