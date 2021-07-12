@@ -17,3 +17,16 @@ export const selectMovie = (id)=> dispatch => {
     payload : id
   })
 }
+export const addMovieToList = (movie) => (dispatch) => {
+  dispatch({
+    type: "ADD_MOVİE_TO_LIST",
+    payload: movie,
+  });
+};
+
+export const removeMovieFromList = (id) => (dispatch) => {
+  dispatch({
+    type: "REMOVE_MOVIE_FROM_LIST",
+    payload: id,
+  });
+};

@@ -24,7 +24,7 @@ const Login = (props) => {
         await selectUser(user);
         setEmail("");
         setPassword("");
-        alertify.success("Sisteme Giriş Yapıldı.", 1);
+        alertify.success("Login to the system.", 1);
         props.history.push(`/movies/${movie.imdbID}`);
       }
     });
@@ -32,7 +32,7 @@ const Login = (props) => {
     if (!userCheck) {
       setEmail("");
       setPassword("");
-      alertify.error("Kullanıcı Bulunamadı.", 1);
+      alertify.error("User not found.", 1);
     }
   };
   if (movie && users) {
