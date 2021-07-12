@@ -11,7 +11,7 @@ const Input = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     setDataCheck(false);
-    if (inpValue) {
+    if (inpValue.length) {
       await getMovies(inpValue);
       setInpValue("");
       setDataCheck(true);
@@ -30,7 +30,6 @@ const Input = () => {
                 placeholder="Film Ara..."
                 value={inpValue}
                 onChange={(e) => setInpValue(e.target.value)}
-                required
               />
               <button className="btn btn-primary" type="submit">
                 Ara
