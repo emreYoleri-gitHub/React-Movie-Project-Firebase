@@ -47,7 +47,7 @@ const Movies = ({ history }) => {
                   onClick={() => examineMovieCard(movie.imdbID)}
                   className="btn btn-danger mt-3 mb-3"
                 >
-                  İncele
+                  Examine
                 </button>
               </div>
             </div>
