@@ -17,8 +17,10 @@ const Login = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    let userCheck = false;
     users.map(async (user) => {
       if (user.email === email && user.password === password) {
+        userCheck = true;
         await selectUser(user);
         setEmail("");
         setPassword("");
@@ -26,6 +28,12 @@ const Login = (props) => {
         props.history.push(`/movies/${movie.imdbID}`);
       }
     });
+
+    if (!userCheck) {
+      setEmail("");
+      setPassword("");
+      alertify.error("Kullanıcı Bulunamadı.", 1);
+    }
   };
   if (movie && users) {
     return (

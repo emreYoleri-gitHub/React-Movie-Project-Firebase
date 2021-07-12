@@ -4,17 +4,17 @@ import Movies from "./Movies";
 import { bindActionCreators } from "redux";
 import { movieActions } from "../redux/actions";
 const Input = () => {
-  const [inpValue, setInpValue] = useState(null);
+  const [inpValue, setInpValue] = useState("");
   const [dataCheck, setDataCheck] = useState(false);
   const movies = useSelector((state) => state.movieReducer.movies);
   const dispatch = useDispatch();
-   const { getMovies } = bindActionCreators(movieActions, dispatch);
+  const { getMovies } = bindActionCreators(movieActions, dispatch);
   const submitHandler = async (e) => {
     e.preventDefault();
     setDataCheck(false);
     if (inpValue) {
       await getMovies(inpValue);
-      setInpValue(null);
+      setInpValue("");
       setDataCheck(true);
     }
   };

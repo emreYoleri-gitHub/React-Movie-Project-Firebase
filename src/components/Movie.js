@@ -2,10 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Movie = (props) => {
-  const movie = useSelector(state => state.movieReducer.currentMovie)
-  const turnHomePageHandler = () => {
-    props.history.push("/");
-  };
+  const movie = useSelector((state) => state.movieReducer.currentMovie);
   if (movie) {
     return (
       <div
@@ -23,19 +20,13 @@ const Movie = (props) => {
           height="350"
           className="rounded-3"
         />
-
         <p className="mt-2">Type : {movie.Type}</p>
         <p className="mt-2">Year : {movie.Year}</p>
       </div>
     );
   } else {
-    return (
-      <div className="text-center">
-        <button className="btn btn-danger mt-3" onClick={turnHomePageHandler}>
-          Anasayfa
-        </button>
-      </div>
-    );
+    props.history.push("/");
+    return <div></div>;
   }
 };
 
